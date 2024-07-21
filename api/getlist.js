@@ -1,5 +1,5 @@
 const express = require('express');
-const { MongoClient } = require('mongodb'); 
+const { MongoClient } = require('mongodb');
 
 // Connection URI
 const uri = "mongodb+srv://hassan:KRgWqofng5lMtGgw@vpn-customers.g7s1zv1.mongodb.net/vpn-customers?retryWrites=true&w=majority";
