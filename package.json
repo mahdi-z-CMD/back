@@ -1,5 +1,12 @@
 {
+  "name": "my-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node api/hello.js", 
+    "build": "echo 'No build step for serverless function'"
+  },
   "dependencies": {
-    "mongoose": "^8.5.1"
+    
   }
 }
