@@ -1,10 +1,14 @@
 {
     "version": 2,
-    "functions": {
-      "api/hello.js": {
-        "runtime": "nodejs18.x"
+    "builds": [
+      {
+        "src": "package.json",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "build"
+        }
       }
-    },
+    ],
     "routes": [
       {
         "src": "/api/hello",
