@@ -1,11 +1,4 @@
-const express = require('express');
-const app = express();
-const port = process.env.PORT || 3000;
-
-app.get('/api/hello', (req, res) => {
-  res.send('Hello, world!');
-});
-
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
-});
+module.exports = (req, res) => {
+    res.status(200).send('Hello, world!');
+  };
+  
