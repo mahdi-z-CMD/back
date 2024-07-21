@@ -1,12 +1,11 @@
 {
-  "name": "my-project",
+  "name": "back",
   "version": "1.0.0",
+  "main": "api/hello.js",
   "scripts": {
-    "start": "node api/hello.js",
-    "build": "react-scripts build",
-    "postinstall": "react-scripts build"
+    "start": "node api/hello.js"
   },
   "dependencies": {
-    
+    "express": "^4.17.1"
   }
 }
