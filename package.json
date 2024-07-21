@@ -5,10 +5,8 @@
   "scripts": {
     "start": "node api/hello.js"
   },
-  "dependencies": {
-    "netlify-cli": "^3.29.14"
-  },
+  "dependencies": {},
   "engines": {
-    "node": "14.x"
+    "node": "18.x"
   }
 }
