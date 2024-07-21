@@ -1,14 +1,14 @@
 {
-  "name": "vercel-test",
+  "name": "vpn-backend",
   "version": "1.0.0",
   "main": "api/hello.js",
   "scripts": {
     "start": "node api/hello.js"
   },
-  "dependencies": {}
-  {
-    "engines": {
-      "node": "20.x"
-    }
+  "dependencies": {
+    "netlify-cli": "^3.29.14"
+  },
+  "engines": {
+    "node": "14.x"
   }
 }
