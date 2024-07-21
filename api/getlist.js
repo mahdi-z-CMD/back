@@ -8,7 +8,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 exports.handler = async (event) => {
   try {
     await client.connect();
-    const database = client.db('vpn-customers'); // Replace with your database name
+    const database = client.db('customers'); // Replace with your database name
     const collection = database.collection('vpn'); // Replace with your collection name
     const users = await collection.find({}).toArray();
     
