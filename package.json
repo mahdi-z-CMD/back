@@ -5,7 +5,9 @@
   "scripts": {
     "start": "node api/hello.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "mongodb": "^6.8.0"
+  },
   "engines": {
     "node": "18.x"
   }
