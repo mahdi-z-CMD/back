@@ -2,7 +2,7 @@
     "version": 2,
     "functions": {
       "api/hello.js": {
-        "runtime": "nodejs"
+        "runtime": "nodejs14.x"
       }
     },
     "routes": [

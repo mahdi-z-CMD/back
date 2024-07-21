@@ -6,4 +6,9 @@
     "start": "node api/hello.js"
   },
   "dependencies": {}
+  {
+    "engines": {
+      "node": "20.x"
+    }
+  }
 }
