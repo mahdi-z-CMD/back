@@ -3,16 +3,11 @@
   "version": "1.0.0",
   "main": "api/hello.js",
   "scripts": {
-    "start": "node api/hello.js",
-    "build": "next build",
-    "export": "next export"
+    "start": "node api/hello.js"
   },
   "dependencies": {
     "express": "^4.19.2",
-    "mongodb": "^6.8.0",
-    "next": "^11.1.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "mongodb": "^6.8.0"
   },
   "engines": {
     "node": "18.x"

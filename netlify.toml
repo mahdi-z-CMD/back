@@ -1,10 +1,13 @@
 [build]
-  functions = "api"
-  publish = "out" # Default output directory for Next.js export
+  command = "npm install" # or "yarn install"
+  publish = "public" # or the directory where your static files are located
+
+[functions]
+  directory = "api"
 
 [[headers]]
   for = "/*"
   [headers.values]
-    Access-Control-Allow-Origin = "*"
-    Access-Control-Allow-Methods = "GET, POST, OPTIONS"
     Access-Control-Allow-Headers = "Content-Type"
+    Access-Control-Allow-Methods = "GET, POST, OPTIONS"
+    Access-Control-Allow-Origin = "*"
