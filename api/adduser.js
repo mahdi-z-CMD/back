@@ -1,9 +1,9 @@
 // netlify/functions/adduser.js
 
 exports.handler = async (event, context) => {
-    console.log('Received event:', event); // Log the event object for debugging
-    
-    // Handle preflight OPTIONS request
+    console.log('Received event:', event); // Log the entire event for debugging
+  
+    // Handle OPTIONS request for CORS preflight
     if (event.httpMethod === 'OPTIONS') {
       return {
         statusCode: 204,
@@ -15,18 +15,18 @@ exports.handler = async (event, context) => {
       };
     }
   
-    // Handle POST request
     if (event.httpMethod === 'POST') {
       try {
         const { email, date, telegramId } = JSON.parse(event.body);
   
-        // Log the data to ensure it's being parsed correctly
+        // Log the input data
         console.log('Parsed data:', { email, date, telegramId });
   
-        // Your existing code to handle adding the user
+        // Your logic to add the user to the database
+        // Replace with your actual database logic
         const result = await addUserToDatabase(email, date, telegramId);
   
-        // Log the result to verify the output
+        // Log the result from the database
         console.log('Database result:', result);
   
         return {
@@ -39,11 +39,10 @@ exports.handler = async (event, context) => {
           },
         };
       } catch (error) {
-        console.error('Error occurred:', error); // Log the error for debugging
-  
+        console.error('Error:', error); // Log the error for debugging
         return {
           statusCode: 500,
-          body: JSON.stringify({ error: 'An error occurred' }),
+          body: JSON.stringify({ error: 'Internal Server Error' }),
           headers: {
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
@@ -53,7 +52,6 @@ exports.handler = async (event, context) => {
       }
     }
   
-    // Default response for unsupported HTTP methods
     return {
       statusCode: 405,
       body: JSON.stringify({ error: 'Method Not Allowed' }),
@@ -63,5 +61,11 @@ exports.handler = async (event, context) => {
         'Access-Control-Allow-Headers': 'Content-Type',
       },
     };
+  };
+  
+  // Example function to simulate database insertion
+  const addUserToDatabase = async (email, date, telegramId) => {
+    // Replace this with your actual database logic
+    return { insertedId: 'exampleId' };
   };
   
