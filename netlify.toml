@@ -1,6 +1,5 @@
 [build]
-  command = "npm install" # or "yarn install" if you are using Yarn
-  # Remove the publish directive if not needed
+  command = "npm install" # or "yarn install" if using Yarn
 
 [functions]
   directory = "api"
