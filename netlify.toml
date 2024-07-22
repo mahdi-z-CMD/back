@@ -1,6 +1,6 @@
 [build]
   functions = "api"
-  publish = "build" # Adjust this if necessary based on your build output directory
+  publish = "out" # Default output directory for Next.js export
 
 [[headers]]
   for = "/*"
