@@ -1,6 +1,6 @@
 [build]
-  command = "npm install" # or "yarn install"
-  publish = "public" # or the directory where your static files are located
+  command = "npm install" # Or "yarn install" if using Yarn
+  publish = "public" # If you have a frontend; otherwise, you can remove this
 
 [functions]
   directory = "api"
