@@ -1,6 +1,6 @@
 [build]
-  command = "npm install" # Or "yarn install" if using Yarn
-  publish = "public" # If you have a frontend; otherwise, you can remove this
+  command = "npm install" # or "yarn install" if you are using Yarn
+  # Remove the publish directive if not needed
 
 [functions]
   directory = "api"
