@@ -1,7 +1,7 @@
 // netlify/functions/adduser.js
 
 exports.handler = async (event, context) => {
-    console.log('Received event:', event); // Log the entire event for debugging
+    console.log('Received event:', event); // Log the entire event
   
     // Handle OPTIONS request for CORS preflight
     if (event.httpMethod === 'OPTIONS') {
@@ -18,15 +18,10 @@ exports.handler = async (event, context) => {
     if (event.httpMethod === 'POST') {
       try {
         const { email, date, telegramId } = JSON.parse(event.body);
-  
-        // Log the input data
         console.log('Parsed data:', { email, date, telegramId });
   
-        // Your logic to add the user to the database
-        // Replace with your actual database logic
+        // Replace this with your actual database logic
         const result = await addUserToDatabase(email, date, telegramId);
-  
-        // Log the result from the database
         console.log('Database result:', result);
   
         return {
@@ -39,7 +34,7 @@ exports.handler = async (event, context) => {
           },
         };
       } catch (error) {
-        console.error('Error:', error); // Log the error for debugging
+        console.error('Error:', error); // Log errors
         return {
           statusCode: 500,
           body: JSON.stringify({ error: 'Internal Server Error' }),
@@ -65,7 +60,7 @@ exports.handler = async (event, context) => {
   
   // Example function to simulate database insertion
   const addUserToDatabase = async (email, date, telegramId) => {
-    // Replace this with your actual database logic
+    // Replace with actual database logic
     return { insertedId: 'exampleId' };
   };
   
