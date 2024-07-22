@@ -1,5 +1,6 @@
 [build]
   functions = "api"
+  publish = "build" # Adjust this if necessary based on your build output directory
 
 [[headers]]
   for = "/*"
