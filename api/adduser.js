@@ -1,7 +1,7 @@
 const { MongoClient } = require('mongodb');
 
 // Replace with your MongoDB connection string
-const uri = 'YOUR_MONGODB_CONNECTION_STRING';
+const uri = "mongodb+srv://hassan:KRgWqofng5lMtGgw@vpn-customers.g7s1zv1.mongodb.net/?retryWrites=true&w=majority&appName=vpn-customers";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 exports.handler = async (event, context) => {
@@ -25,8 +25,8 @@ exports.handler = async (event, context) => {
         console.log('Parsed data:', { email, date, telegramId });
 
         await client.connect();
-        const database = client.db('yourDatabaseName');
-        const collection = database.collection('yourCollectionName');
+        const database = client.db('customers');
+        const collection = database.collection('vpn');
 
         // Insert the user data into the database
         const result = await collection.insertOne({ email, date, telegramId });
