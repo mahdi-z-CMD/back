@@ -1,4 +1,4 @@
-// netlify/functions/edituser.js
+// netlify/functions/updateuser.js
 
 const { MongoClient, ObjectId } = require('mongodb'); // Adjust based on your database client
 
@@ -9,8 +9,9 @@ const connectToDatabase = async () => {
   if (database) return database;
   
   try {
-    const client = await MongoClient.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
-    database = client.db(process.env.MONGODB_DB_NAME);
+    const uri = 'mongodb+srv://hassan:KRgWqofng5lMtGgw@vpn-customers.g7s1zv1.mongodb.net/?retryWrites=true&w=majority&appName=vpn-customers'; // Your MongoDB URI
+    const client = await MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+    database = client.db('customers'); // Your database name
     return database;
   } catch (error) {
     console.error('Failed to connect to the database:', error);
@@ -37,7 +38,7 @@ exports.handler = async (event, context) => {
       const { id, email, date, telegramId } = JSON.parse(event.body);
       const db = await connectToDatabase();
 
-      const result = await db.collection('users').updateOne(
+      const result = await db.collection('vpn').updateOne( // Your collection name
         { _id: new ObjectId(id) },
         { $set: { email, date, telegramId } }
       );
