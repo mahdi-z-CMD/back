@@ -1,6 +1,19 @@
 // netlify/functions/deleteuser.js
 
 exports.handler = async (event, context) => {
+    if (event.httpMethod === 'OPTIONS') {
+        // Handle CORS preflight request
+        return {
+            statusCode: 204,
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'DELETE, OPTIONS',
+                'Access-Control-Allow-Headers': 'Content-Type',
+            },
+            body: '',
+        };
+    }
+
     if (event.httpMethod === 'DELETE') {
         try {
             const { id } = JSON.parse(event.body);
